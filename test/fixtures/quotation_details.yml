@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quotation: one
+  brand: one
+  product: one
+  style: MyString
+  color: one
+  quantity: 1
+  size: one
+  ratio: 1
+  delivery_date: 2018-04-16
+  target_price: 9.99
+  final_price: 9.99
+  otherdetails: MyString
+  total: 9.99
+  status: false
+
+two:
+  quotation: two
+  brand: two
+  product: two
+  style: MyString
+  color: two
+  quantity: 1
+  size: two
+  ratio: 1
+  delivery_date: 2018-04-16
+  target_price: 9.99
+  final_price: 9.99
+  otherdetails: MyString
+  total: 9.99
+  status: false

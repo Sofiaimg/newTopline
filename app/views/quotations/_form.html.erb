@@ -1,0 +1,57 @@
+<%= form_with(model: quotation, local: true) do |form| %>
+  <% if quotation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(quotation.errors.count, "error") %> prohibited this quotation from being saved:</h2>
+
+      <ul>
+      <% quotation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :season_id %>
+    <%= form.text_field :season_id, id: :quotation_season_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :supplier_id %>
+    <%= form.text_field :supplier_id, id: :quotation_supplier_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :handler_id %>
+    <%= form.text_field :handler_id, id: :quotation_handler_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :seller_id %>
+    <%= form.text_field :seller_id, id: :quotation_seller_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :client_id %>
+    <%= form.text_field :client_id, id: :quotation_client_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payment_term_id %>
+    <%= form.text_field :payment_term_id, id: :quotation_payment_term_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.check_box :status, id: :quotation_status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :proforma %>
+    <%= form.text_field :proforma, id: :quotation_proforma %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

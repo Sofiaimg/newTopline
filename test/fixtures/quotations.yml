@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  season: one
+  supplier: one
+  handler: one
+  seller: one
+  client: one
+  payment_term: one
+  status: false
+  proforma: MyString
+
+two:
+  season: two
+  supplier: two
+  handler: two
+  seller: two
+  client: two
+  payment_term: two
+  status: false
+  proforma: MyString

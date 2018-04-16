@@ -1,0 +1,21 @@
+<div class='nested-fields'>
+<table>
+  <thead>
+    <tr>
+      <th><%= f.label :quantity, "Quantity" %></th>
+      <th><%= f.label :size_id%></th>
+      <th><%= f.label :ratio %></th>
+      <th><%= f.hidden_field :_destroy %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= f.number_field :quantity, id: :quantity %></td>
+      <td><%= f.collection_select :size_id, Size.all, :id, :name %></td>
+      <td><%= f.text_field :ratio, id: :variant_ratio %></td>
+      <td><%= link_to_remove_association "remove row", f %></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<hr>

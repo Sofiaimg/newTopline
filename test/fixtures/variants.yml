@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quotation_detail: one
+  quantity: 1
+  size: one
+  ratio: 1
+
+two:
+  quotation_detail: two
+  quantity: 1
+  size: two
+  ratio: 1

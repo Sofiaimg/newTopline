@@ -1,0 +1,74 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quotation:</strong>
+  <%= @quotation_detail.quotation %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @quotation_detail.brand %>
+</p>
+
+<p>
+  <strong>Product:</strong>
+  <%= @quotation_detail.product %>
+</p>
+
+<p>
+  <strong>Style:</strong>
+  <%= @quotation_detail.style %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @quotation_detail.color %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @quotation_detail.quantity %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @quotation_detail.size %>
+</p>
+
+<p>
+  <strong>Ratio:</strong>
+  <%= @quotation_detail.ratio %>
+</p>
+
+<p>
+  <strong>Delivery date:</strong>
+  <%= @quotation_detail.delivery_date %>
+</p>
+
+<p>
+  <strong>Target price:</strong>
+  <%= @quotation_detail.target_price %>
+</p>
+
+<p>
+  <strong>Final price:</strong>
+  <%= @quotation_detail.final_price %>
+</p>
+
+<p>
+  <strong>Otherdetails:</strong>
+  <%= @quotation_detail.otherdetails %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @quotation_detail.total %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @quotation_detail.status %>
+</p>
+
+<%= link_to 'Edit', edit_quotation_detail_path(@quotation_detail) %> |
+<%= link_to 'Back', quotation_details_path %>

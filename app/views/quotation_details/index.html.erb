@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Quotation Details</h1>
+
+<table class="table table-responsive table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead>
+    <tr>
+      <th>Quotation n°</th>
+      <th>Quotation Details N°</th>
+      <th>Brand</th>
+      <th>Product</th>
+      <th>Style</th>
+      <th>Color</th>
+      <th>Quantity</th>
+      <th>Size</th>
+      <th>Ratio</th>
+      <th>Delivery date</th>
+      <th>Target price</th>
+      <th>Final price</th>
+      <th>Otherdetails</th>
+      <th>Total</th>
+      <th>Status</th>
+      <th>link</th>
+      <th>link</th>
+      <th>link</th>
+      </tr>
+  </thead>
+
+  <tbody>
+    <% @quotation_details.each do |quotation_detail| %>
+      <tr>
+        <td><%= quotation_detail.quotation.id %></td>
+        <td><%= quotation_detail.id %></td>
+        <td><%= quotation_detail.brand.name %></td>
+        <td><%= quotation_detail.product.description %></td>
+        <td><%= quotation_detail.style %></td>
+        <td><%= quotation_detail.color.name %></td>
+        <td><%= quotation_detail.quantity %></td>
+        <td><%= quotation_detail.size.name %></td>
+        <td><%= quotation_detail.ratio %></td>
+        <td><%= quotation_detail.delivery_date %></td>
+        <td><%= quotation_detail.target_price %></td>
+        <td><%= quotation_detail.final_price %></td>
+        <td><%= quotation_detail.otherdetails %></td>
+        <td><%= quotation_detail.total %></td>
+        <td><%= quotation_detail.status %></td>
+        <td><%= link_to 'Edit variant', edit_variant_path(quotation_detail) %></td>
+        <td><%= link_to 'Show', quotation_quotation_detail %></td>
+        <td><%= link_to 'Edit', edit_quotation_quotationdetail_path(:quotation_id, quotationdetail.id)) %></td>
+        <td><%= link_to 'Destroy', quotation_quotation_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Quotation Detail', new_quotation_detail_path %>

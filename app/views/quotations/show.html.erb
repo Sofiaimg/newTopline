@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Season:</strong>
+  <%= @quotation.season %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @quotation.supplier %>
+</p>
+
+<p>
+  <strong>Handler:</strong>
+  <%= @quotation.handler %>
+</p>
+
+<p>
+  <strong>Seller:</strong>
+  <%= @quotation.seller %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @quotation.client %>
+</p>
+
+<p>
+  <strong>Payment term:</strong>
+  <%= @quotation.payment_term %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @quotation.status %>
+</p>
+
+<p>
+  <strong>Proforma:</strong>
+  <%= @quotation.proforma %>
+</p>
+
+<%= link_to 'Edit', edit_quotation_path(@quotation) %> |
+<%= link_to 'Back', quotations_path %>
