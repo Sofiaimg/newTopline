@@ -10,6 +10,7 @@ class QuotationsController < ApplicationController
   # GET /quotations/1
   # GET /quotations/1.json
   def show
+
   end
 
   # GET /quotations/new

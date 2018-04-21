@@ -6,12 +6,12 @@ one:
   description: MyString
   finish: MyString
   composition: MyString
-  construction: MyString
   fit: MyString
+  construction: MyString
   placket: MyString
   pocket: MyString
   washing: MyString
-  other_details: MyString
+  note: MyString
 
 two:
   category: two
@@ -19,9 +19,9 @@ two:
   description: MyString
   finish: MyString
   composition: MyString
-  construction: MyString
   fit: MyString
+  construction: MyString
   placket: MyString
   pocket: MyString
   washing: MyString
-  other_details: MyString
+  note: MyString

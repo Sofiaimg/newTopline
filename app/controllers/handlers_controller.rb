@@ -10,6 +10,7 @@ class HandlersController < ApplicationController
   # GET /handlers/1
   # GET /handlers/1.json
   def show
+    @orders_by_handler = Quotation.where(handler_id: @handler)
   end
 
   # GET /handlers/new

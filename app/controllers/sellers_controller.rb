@@ -10,6 +10,7 @@ class SellersController < ApplicationController
   # GET /sellers/1
   # GET /sellers/1.json
   def show
+    @orders_by_seller = Quotation.where(seller_id: @seller)
   end
 
   # GET /sellers/new

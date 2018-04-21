@@ -1,4 +1,3 @@
-jQuery ->
 document.addEventListener('turbolinks:before-cache', function(){
  $('#myTable').DataTable().destroy();
 })

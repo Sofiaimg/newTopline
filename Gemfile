@@ -5,8 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'fog-aws'
+gem 'carrierwave'
 gem 'rails', '~> 5.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
@@ -22,6 +23,11 @@ gem 'activeadmin'
 gem 'faker'
 gem 'cocoon'
 gem 'jquery-rails'
+gem 'font-awesome-rails'
+gem 'bootstrap', '~> 4.1.0'
+gem "mini_magick"
+gem 'bullet', group: 'development'
+
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

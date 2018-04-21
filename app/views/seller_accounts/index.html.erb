@@ -19,7 +19,7 @@
   <tbody>
     <% @seller_accounts.each do |seller_account| %>
       <tr>
-        <td><%= seller_account.seller %></td>
+        <td><%= seller_account.seller.name %></td>
         <td><%= seller_account.bank %></td>
         <td><%= seller_account.address %></td>
         <td><%= seller_account.account %></td>

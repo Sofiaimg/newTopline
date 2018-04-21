@@ -11,47 +11,81 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :season_id %>
-    <%= form.text_field :season_id, id: :quotation_season_id %>
-  </div>
+  <hr>
+  <div class="row text-center">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">STEP: 1</h5>
+          <hr>
+          <p class="card-text">
 
-  <div class="field">
-    <%= form.label :supplier_id %>
-    <%= form.text_field :supplier_id, id: :quotation_supplier_id %>
-  </div>
+            <div class="field">
+              <%= form.label :season_id %>
+              <%= form.collection_select :season_id, Season.all, :id, :name %>
+            </div>
 
-  <div class="field">
-    <%= form.label :handler_id %>
-    <%= form.text_field :handler_id, id: :quotation_handler_id %>
-  </div>
+            <div class="field">
+              <%= form.label :supplier_id %>
+              <%= form.collection_select :supplier_id, Supplier.all, :id, :name %>
+            </div>
 
-  <div class="field">
-    <%= form.label :seller_id %>
-    <%= form.text_field :seller_id, id: :quotation_seller_id %>
-  </div>
+            <div class="field">
+              <%= form.label :client_id %>
+              <%= form.collection_select :client_id, Client.all, :id, :name %>
+            </div>
 
-  <div class="field">
-    <%= form.label :client_id %>
-    <%= form.text_field :client_id, id: :quotation_client_id %>
-  </div>
+            <div class="field">
+              <%= form.label :payment_term_id %>
+              <%= form.collection_select :payment_term_id, PaymentTerm.all, :id, :clause %>
+              <br>
+              <%= form.collection_select :payment_term_id, PaymentTerm.all, :id, :conditions %>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">STEP: 2</h5>
+          <hr>
+          <p class="card-text">
+            <div class="field">
+              <%= form.label :handler_id %>
+              <%= form.collection_select   :handler_id, Handler.all, :id,  :name %>
+            </div>
 
-  <div class="field">
-    <%= form.label :payment_term_id %>
-    <%= form.text_field :payment_term_id, id: :quotation_payment_term_id %>
-  </div>
+            <div class="field">
+              <%= form.label :seller_id %>
+              <%= form.collection_select :seller_id, Seller.all, :id, :name %>
+            </div>
+          </p>
 
-  <div class="field">
-    <%= form.label :status %>
-    <%= form.check_box :status, id: :quotation_status %>
-  </div>
+            <div class="field">
+              <%= form.label :status, :status? ? "Pending": "Confirmed" %>
+              <%= form.check_box :status, id: :quotation_status %>
+            </div>
 
-  <div class="field">
-    <%= form.label :proforma %>
-    <%= form.text_field :proforma, id: :quotation_proforma %>
+            <div class="field">
+              <%= form.label :proforma, "When Confirmed, add PI number" %>
+              <%= form.text_field :proforma, id: :quotation_proforma %>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+<hr>
+<div class="col-sm-12">
+  <div class="card text-center">
+    <div class="card-body">
+      <h5 class="card-title">STEP: 3</h5>
+      <hr>
+      <div class="actions">
+        <%= form.submit "Save Quotation", class: "btn btn-outline-danger btn-lg"%>
+      </div>
+      <% end %>
+      </div>
+    </div>
   </div>
-<% end %>
+</div>

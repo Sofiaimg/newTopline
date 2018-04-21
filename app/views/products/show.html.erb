@@ -1,59 +1,32 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @product.category %>
-</p>
-
-<p>
-  <strong>Photo:</strong>
-  <%= @product.photo %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Finish:</strong>
-  <%= @product.finish %>
-</p>
-
-<p>
-  <strong>Composition:</strong>
-  <%= @product.composition %>
-</p>
-
-<p>
-  <strong>Construction:</strong>
-  <%= @product.construction %>
-</p>
-
-<p>
-  <strong>Fit:</strong>
-  <%= @product.fit %>
-</p>
-
-<p>
-  <strong>Placket:</strong>
-  <%= @product.placket %>
-</p>
-
-<p>
-  <strong>Pocket:</strong>
-  <%= @product.pocket %>
-</p>
-
-<p>
-  <strong>Washing:</strong>
-  <%= @product.washing %>
-</p>
-
-<p>
-  <strong>Other details:</strong>
-  <%= @product.other_details %>
-</p>
+<hr>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+<div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"> Product Details</h5>
+        <hr>
+        <%= image_tag @product.photo, class: "img-fluid"%>
+        <p class="card-text">
+          <p> <strong>Category:</strong> <%= @product.category.name %> </p>
+          <p> <strong>Description:</strong> <%= @product.description %> </p>
+          <p> <strong>Finish:</strong> <%= @product.finish %> </p>
+          <p> <strong>Composition:</strong> <%= @product.composition %> </p>
+          <p> <strong>Fit:</strong> <%= @product.fit %> </p>
+          <p> <strong>Construction:</strong> <%= @product.construction %> </p>
+          <p> <strong>Placket:</strong> <%= @product.placket %> </p>
+          <p> <strong>Pocket:</strong> <%= @product.pocket %> </p>
+          <p> <strong>Washing:</strong> <%= @product.washing %> </p>
+          <p> <strong>Notes:</strong> <%= @product.note %> </p>
+        </p>
+        <a href="<%= products_path %>" class="btn btn-outline-secondary btn-sm">Go back to All Products</a>
+      </div>
+    </div>
+  </div>
+</div>

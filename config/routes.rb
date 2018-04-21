@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :products
   resources :variants
   resources :quotations do
     resources :quotation_details
   end
-  resources :products
   resources :brands
   resources :payment_terms
   resources :seasons

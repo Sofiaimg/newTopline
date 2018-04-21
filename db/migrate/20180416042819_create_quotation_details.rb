@@ -12,7 +12,7 @@ class CreateQuotationDetails < ActiveRecord::Migration[5.1]
       t.date :delivery_date
       t.decimal :target_price, precision: 10, scale: 2
       t.decimal :final_price, precision: 10, scale: 2
-      t.string :otherdetails
+      t.string :otherdetail
       t.decimal :total, precision: 20, scale: 2
       t.boolean :status
 

@@ -11,62 +11,102 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :category_id %>
-    <%= form.text_field :category_id, id: :product_category_id %>
+  <hr>
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">STEP: 1</h5>
+          <hr>
+          <p class="card-text">
+            <div class="field">
+              <%= form.label :category_id %>
+              <%= form.collection_select :category_id, Category.all, :id, :name %>
+            </div>
+
+            <div class="field">
+              <%= form.label :photo %>
+              <%= form.file_field :photo, id: :photo %>
+              <%= form.text_field :remote_photo_url, id: :remote_photo %>
+            </div>
+
+            <div class="field">
+              <%= form.label :description %>
+              <%= form.text_field :description, id: :product_description %>
+            </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">STEP: 2</h5>
+          <hr>
+          <p class="card-text">
+            <div class="field">
+                <%= form.label :composition %>
+                <%= form.text_field :composition, id: :product_composition %>
+              </div>
+
+              <div class="field">
+                <%= form.label :construction %>
+                <%= form.text_field :construction, id: :product_construction %>
+              </div>
+
+              <div class="field">
+                <%= form.label :fit %>
+                <%= form.text_field :fit, id: :product_fit %>
+              </div>
+
+              <div class="field">
+                <%= form.label :finish %>
+                <%= form.text_field :finish, id: :product_finish %>
+              </div>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">STEP: 3</h5>
+              <hr>
+            <p class="card-text">
+              <div class="field">
+                <%= form.label :placket %>
+                <%= form.text_field :placket, id: :product_placket %>
+              </div>
+
+              <div class="field">
+                <%= form.label :pocket %>
+                <%= form.text_field :pocket, id: :product_pocket %>
+              </div>
+
+              <div class="field">
+                <%= form.label :washing %>
+                <%= form.text_field :washing, id: :product_washing %>
+              </div>
+
+              <div class="field">
+                <%= form.label :note %>
+                <%= form.text_field :npte, id: :product_note %>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
   </div>
 
-  <div class="field">
-    <%= form.label :photo %>
-    <%= form.text_field :photo, id: :product_photo %>
+  <div class="col-sm-12 text-center">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">STEP: 4</h5>
+            <hr>
+            <div class="actions">
+              <%= form.submit "Save Product", class: "btn btn-outline-danger btn-lg"%>
+            </div>
+          <% end %>
+        </div>
+      </div>
   </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, id: :product_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :finish %>
-    <%= form.text_field :finish, id: :product_finish %>
-  </div>
-
-  <div class="field">
-    <%= form.label :composition %>
-    <%= form.text_field :composition, id: :product_composition %>
-  </div>
-
-  <div class="field">
-    <%= form.label :construction %>
-    <%= form.text_field :construction, id: :product_construction %>
-  </div>
-
-  <div class="field">
-    <%= form.label :fit %>
-    <%= form.text_field :fit, id: :product_fit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :placket %>
-    <%= form.text_field :placket, id: :product_placket %>
-  </div>
-
-  <div class="field">
-    <%= form.label :pocket %>
-    <%= form.text_field :pocket, id: :product_pocket %>
-  </div>
-
-  <div class="field">
-    <%= form.label :washing %>
-    <%= form.text_field :washing, id: :product_washing %>
-  </div>
-
-  <div class="field">
-    <%= form.label :other_details %>
-    <%= form.text_field :other_details, id: :product_other_details %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

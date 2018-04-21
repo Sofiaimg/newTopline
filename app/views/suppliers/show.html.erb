@@ -1,39 +1,69 @@
 <p id="notice"><%= notice %></p>
+<hr>
+<div class="row">
+  <div class="col-sm-2">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Supplier Details</h5>
+        <hr>
+        <p class="card-text">
+          <img class="card-img-top img-fluid" src="<%= @supplier.logo%>" alt="Card image cap">
+          <p> <strong>Name:</strong> <%= @supplier.name %> </p>
+          <p> <strong>Address:</strong> <%= @supplier.address %> </p>
+          <p> <strong>Country:</strong> <%= @supplier.country %> </p>
+          <p> <strong>Contact:</strong> <%= @supplier.contact %> </p>
+          <p> <strong>Phone:</strong> <%= @supplier.phone %> </p>
+          <p> <strong>Fax:</strong> <%= @supplier.fax %> </p>
+          <p> <strong>Email:</strong> <%= @supplier.email %> </p>
+        </p>
+        <a href="<%= sellers_path %>" class="btn btn-outline-secondary btn-sm">Go back to All Sellers</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-10">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Orders: <%= @supplier.name %>  | Sales by Season | Commissions | </h5>
+        <hr>
+        <p class="card-text">
+          <table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+            <thead>
+              <tr>
+                <th>Quotation n°</th>
+                <th>Proforma</th>
+                <th>Season</th>
+                <th>Supplier</th>
+                <th>Handler</th>
+                <th>Seller</th>
+                <th>Client</th>
+                <th>Payment term</th>
+                <th>Payment term</th>
+                <th>Status</th>
+                <th>Link</th>
+              </tr>
+            </thead>
+            <tbody>
 
-<p>
-  <strong>Name:</strong>
-  <%= @supplier.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @supplier.address %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @supplier.country %>
-</p>
-
-<p>
-  <strong>Contact:</strong>
-  <%= @supplier.contact %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @supplier.phone %>
-</p>
-
-<p>
-  <strong>Fax:</strong>
-  <%= @supplier.fax %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @supplier.email %>
-</p>
-
-<%= link_to 'Edit', edit_supplier_path(@supplier) %> |
-<%= link_to 'Back', suppliers_path %>
+          <% @orders_by_supplier.each do |quotation| %>
+              <tr>
+                <td><%= quotation.id %></td>
+                <td><%= quotation.proforma %></td>
+                <td><%= quotation.season.name %></td>
+                <td><%= quotation.supplier.name %></td>
+                <td><%= quotation.handler.name %></td>
+                <td><%= quotation.seller.name %></td>
+                <td><%= quotation.client.name %></td>
+                <td><%= quotation.payment_term.clause %></td>
+                <td><%= quotation.payment_term.conditions %></td>
+                <td><%= quotation.status? ? "Confirmed":"Pending" %></td>
+                <td><%= link_to "See Order details", "#", class: "btn"%></td>
+              </tr>
+          <%end%>
+            </tbody>
+          </table>
+        </p>
+        <a href="<%= quotation_path %>" class="btn btn-outline-secondary btn-sm">Go back to All Orders</a>
+      </div>
+    </div>
+  </div>
+</div>

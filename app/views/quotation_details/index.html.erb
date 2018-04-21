@@ -1,12 +1,54 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Quotation Details</h1>
+<hr>
 
-<table class="table table-responsive table-striped table-bordered table-hover table-sm " id="myTable">
+<h1>Quotations</h1>
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
   <thead>
     <tr>
-      <th>Quotation n°</th>
-      <th>Quotation Details N°</th>
+      <th> <strong>Quot. N°:</strong> </th>
+      <th> <strong>Season:</strong> </th>
+      <th> <strong>Supplier:</strong> </th>
+      <th> <strong>Handler:</strong> </th>
+      <th> <strong>Seller:</strong> </th>
+      <th> <strong>Client:</strong> </th>
+      <th> <strong>Clause:</strong> </th>
+      <th> <strong>Conditions:</strong> </th>
+      <th> <strong>Status:</strong> </th>
+      <th> <strong>Proforma:</strong> </th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>  <%= @quotation.id %> </td>
+      <td>  <%= @quotation.season.name %> </td>
+      <td>  <%= @quotation.supplier.name %> </td>
+      <td>  <%= @quotation.handler.name %> </td>
+      <td>  <%= @quotation.seller.name %> </td>
+      <td>  <%= @quotation.client.name %> </td>
+      <td>  <%= @quotation.payment_term.clause %> </td>
+      <td>  <%= @quotation.payment_term.conditions %> </td>
+      <td>  <%= @quotation.status? ? "Confirmed":"Pending" %> </td>
+      <td>  <%= @quotation.proforma %> </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Quotation Details', quotation_quotation_details_path(@quotation) %> |
+<%= link_to 'Edit', edit_quotation_path(@quotation) %> |
+<%= link_to 'Back', quotations_path %>
+
+
+
+<h1>Quotation Details</h1>
+
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead>
+    <tr>
+      <th>Quot. n°</th>
+      <th>Quot.Det. N°</th>
       <th>Brand</th>
       <th>Product</th>
       <th>Style</th>
@@ -17,12 +59,14 @@
       <th>Delivery date</th>
       <th>Target price</th>
       <th>Final price</th>
-      <th>Otherdetails</th>
+      <th>Otherdetail</th>
       <th>Total</th>
       <th>Status</th>
       <th>link</th>
       <th>link</th>
       <th>link</th>
+      <th>link</th>
+
       </tr>
   </thead>
 
@@ -41,13 +85,13 @@
         <td><%= quotation_detail.delivery_date %></td>
         <td><%= quotation_detail.target_price %></td>
         <td><%= quotation_detail.final_price %></td>
-        <td><%= quotation_detail.otherdetails %></td>
+        <td><%= quotation_detail.otherdetail %></td>
         <td><%= quotation_detail.total %></td>
         <td><%= quotation_detail.status %></td>
         <td><%= link_to 'Edit variant', edit_variant_path(quotation_detail) %></td>
-        <td><%= link_to 'Show', quotation_quotation_detail %></td>
-        <td><%= link_to 'Edit', edit_quotation_quotationdetail_path(:quotation_id, quotationdetail.id)) %></td>
-        <td><%= link_to 'Destroy', quotation_quotation_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', [quotation_detail.quotation, quotation_detail ] %></td>
+        <td><%= link_to 'Edit', edit_quotation_quotation_detail_path(quotation_detail.quotation, quotation_detail) %></td>
+        <td><%= link_to 'Destroy', [quotation_detail.quotation, quotation_detail], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -55,4 +99,4 @@
 
 <br>
 
-<%= link_to 'New Quotation Detail', new_quotation_detail_path %>
+<%= link_to 'New Quotation Detail', new_quotation_quotation_detail_path %>

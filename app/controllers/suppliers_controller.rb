@@ -10,6 +10,7 @@ class SuppliersController < ApplicationController
   # GET /suppliers/1
   # GET /suppliers/1.json
   def show
+    @orders_by_supplier = Quotation.where(supplier_id: @supplier)
   end
 
   # GET /suppliers/new

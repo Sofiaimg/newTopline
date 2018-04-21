@@ -1,53 +1,134 @@
-<%= form_for quotation_quotation_details_path(params[:quotation_id]), method: :post do |f| %>
+<%= form_for([@quotation_detail.quotation, @quotation_detail]) do |f| %>
+<% if @quotation_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@quotation_detail.errors.count, "error") %> prohibited this quotation detail from being saved:</h2>
 
-<table class="table table-responsive table-striped table-bordered table-hover table-sm ">
-  <thead class="table-active">
-    <tr>
-      <th><%= f.label :status %></th>
-      <th><%= f.label :quotation_id %></th>
-      <th><%= f.label :brand_id %></th>
-      <th><%= f.label :product_id %></th>
-      <th><%= f.label :delivery_date %></th>
-      <th><%= f.label :target_price %></th>
-      <th><%= f.label :final_price %></th>
-      <th><%= f.label :otherdetails, "Style N°" %></th>
-      <th><%= f.label :color_id %></th>
-      <th><%= f.label :quantity, "Total quantity"%></th>
-      <th><%= f.label :ratio %></th>
-      <th><%= f.label :size %></th>
-      <th><%= f.label :total %></td>
-      <th><%= f.label :status %></td>
-      </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><%= f.text_field :status, id: :status %></td>
-      <td><%= f.collection_select :quotation_id, Quotation.all, :id, :id %></td>
-      <td><%= f.collection_select :brand_id, Brand.all, :id, :name %></td>
-      <td><%= f.collection_select :product_id, Product.all, :id, :description %></td>
-      <td><%= f.date_field :delivery_date, id: :quotation_detail_delivery_date %></td>
-      <td><%= f.number_field :target_price, id: :quotation_detail_target_price %></td>
-      <td><%= f.number_field :final_price, id: :quotation_detail_final_price %></td>
-      <td><%= f.text_field :otherdetails, id: :quotation_detail_otherdetails %></td>
-      <td><%= f.collection_select :color_id, Color.all, :id, :name %></td>
-      <td><%= f.number_field :quantity, id: :quantity %></td>
-      <td><%= f.text_field :ratio, id: :ratio%></td>
-      <td><%= f.collection_select :size_id, Size.all, :id, :name%></td>
-      <td><%= f.text_field :total, id: :quotation_detail_total %></td>
-      <td><%= f.check_box :status, id: :quotation_detail_status %></td>
-    </tr>
-  </tbody>
-</table>
-
-<h3>Variants</h3>
-  <div id='variants'>
-    <div class='links'>
-      <button><%= link_to_add_association 'add row', f, :variants%></button>
-    </div>
-    <%= f.fields_for :variants do |f| %>
-      <%= render 'quotation_details/_variant_fields', :f => f %>
+      <ul>
+      <% @quotation_detail.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
       <% end %>
+      </ul>
     </div>
-    <hr>
-  <%= f.submit 'Save' %>
-<% end %>
+  <% end %>
+
+<hr>
+<div class="row text-center">
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">STEP: 1</h5>
+        <hr>
+        <p class="card-text">
+          <div class="field">
+            <%= f.label :status %>
+            <%= f.text_field :status, id: :status %>
+          </div>
+          <div class="field">
+            <%= f.label :quotation_id %>
+            <%= f.text_field :quotation_id, id: :quotation_id, :readonly => true %>
+          </div>
+          <div class="field">
+            <%= f.label :brand_id %>
+            <%= f.collection_select :brand_id, Brand.all, :id, :name %>
+          </div>
+          <div class="field">
+            <%= f.label :product_id %>
+            <%= f.collection_select :product_id, Product.all, :id, :description %>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">STEP: 2</h5>
+        <hr>
+        <p class="card-text">
+          <div class="field">
+            <%= f.label :delivery_date %>
+            <%= f.date_field :delivery_date, id: :quotation_detail_delivery_date %>
+          </div>
+            <div class="field">
+            <%= f.label :target_price %>
+            <%= f.number_field :target_price, id: :quotation_detail_target_price %>
+          </div>
+            <div class="field">
+            <%= f.label :final_price %>
+            <%= f.number_field :final_price, id: :quotation_detail_final_price %>
+          </div>
+            <div class="field">
+            <%= f.label :otherdetail, "Style N°" %>
+            <%= f.text_field :otherdetail, id: :quotation_detail_otherdetail %>
+          </div>
+            <div class="field">
+            <%= f.label :status %>
+            <%= f.check_box :status, id: :quotation_detail_status %>
+          </div>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">STEP: 3</h5>
+        <hr>
+        <p class="card-text">
+          <div class="field">
+            <%= f.label :color_id %>
+            <%= f.collection_select :color_id, Color.all, :id, :name %>
+          </div>
+            <div class="field">
+            <%= f.label :quantity, "Total quantity"%>
+            <%= f.number_field :quantity, id: :quantity %>
+          </div>
+            <div class="field">
+            <%= f.label :ratio %>
+            <%= f.text_field :ratio, id: :ratio%>
+          </div>
+          <div class="field">
+            <%= f.label :size_id %>
+            <%= f.collection_select :size_id, Size.all, :id, :name%>
+          </div>
+          <div class="field">
+            <%= f.label :total %>
+            <%= f.text_field :total, id: :quotation_detail_total %>
+          </div>
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-12 text-center">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">STEP: </h5>
+            <hr>
+            <h3>Variants</h3>
+              <div id='variants'>
+                <div class='links'>
+                  <button><%= link_to_add_association 'add row', f, :variants%></button>
+                </div>
+                <%= f.fields_for :variants do |f| %>
+                  <%= render 'quotation_details/_variant_fields', :f => f %>
+                  <% end %>
+                </div>
+                <hr>
+              </div>
+            </div>
+        </div>
+</div>
+
+<div class="col-sm-12 text-center">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">STEP: </h5>
+          <hr>
+          <div class="actions">
+            <%= f.submit "Save Product", class: "btn btn-outline-danger btn-lg"%>
+          </div>
+        <% end %>
+      </div>
+    </div>
+</div>

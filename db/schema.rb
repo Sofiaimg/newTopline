@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180416042900) do
+ActiveRecord::Schema.define(version: 20180421193807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,9 @@ ActiveRecord::Schema.define(version: 20180416042900) do
     t.string "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "logo"
+    t.string "rut"
+    t.string "alias"
   end
 
   create_table "colors", force: :cascade do |t|
@@ -79,7 +82,13 @@ ActiveRecord::Schema.define(version: 20180416042900) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["supplier_id"], name: "index_handlers_on_supplier_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "pages", force: :cascade do |t|
@@ -107,14 +116,15 @@ ActiveRecord::Schema.define(version: 20180416042900) do
     t.string "description"
     t.string "finish"
     t.string "composition"
-    t.string "construction"
     t.string "fit"
+    t.string "construction"
     t.string "placket"
     t.string "pocket"
     t.string "washing"
-    t.string "other_details"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
     t.index ["category_id"], name: "index_products_on_category_id"
   end
 
@@ -130,7 +140,7 @@ ActiveRecord::Schema.define(version: 20180416042900) do
     t.date "delivery_date"
     t.decimal "target_price", precision: 10, scale: 2
     t.decimal "final_price", precision: 10, scale: 2
-    t.string "otherdetails"
+    t.string "otherdetail"
     t.decimal "total", precision: 20, scale: 2
     t.boolean "status"
     t.datetime "created_at", null: false
@@ -187,6 +197,7 @@ ActiveRecord::Schema.define(version: 20180416042900) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
   end
 
   create_table "sizes", force: :cascade do |t|
@@ -216,6 +227,9 @@ ActiveRecord::Schema.define(version: 20180416042900) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "logo"
+    t.string "vat"
+    t.string "alias"
   end
 
   create_table "users", force: :cascade do |t|

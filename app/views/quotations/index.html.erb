@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
+<hr>
 <p>Remember to add products first before adding new Quotation details</p>
 <%= link_to "Add product",  products_path %>
 <hr>
 
 <h1>Quotations</h1>
 
-<table class="table table-responsive table-striped table-bordered table-hover table-sm " id="myTable">
+<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
   <thead>
     <tr>
       <th>Quotation n°</th>
+      <th>Status</th>
+      <th>Proforma</th>
       <th>Season</th>
       <th>Supplier</th>
       <th>Handler</th>
@@ -16,13 +19,11 @@
       <th>Client</th>
       <th>Payment term</th>
       <th>Payment term</th>
-      <th>Status</th>
-      <th>Proforma</th>
       <th>links</th>
       <th>links</th>
       <th>links</th>
       <th>links</th>
-
+      <th>links</th>
     </tr>
   </thead>
 
@@ -30,6 +31,8 @@
     <% @quotations.each do |quotation| %>
       <tr>
         <td><%= quotation.id %></td>
+        <td><%= quotation.status? ? "Confirmed":"Pending" %></td>
+        <td><%= quotation.proforma %></td>
         <td><%= quotation.season.name %></td>
         <td><%= quotation.supplier.name %></td>
         <td><%= quotation.handler.name %></td>
@@ -37,9 +40,7 @@
         <td><%= quotation.client.name %></td>
         <td><%= quotation.payment_term.clause %></td>
         <td><%= quotation.payment_term.conditions %></td>
-        <td><%= quotation.status? ? "Confirmed":"Pending" %></td>
-        <td><%= quotation.proforma %></td>
-        <td><%= link_to 'See quotation details', quotation_quotation_detail_path(quotation, :quotation_details_id) %></td>
+        <td><%= link_to 'See quotation details', quotation_quotation_details_path(quotation) %></td>
         <td><%= link_to "add new details", new_quotation_quotation_detail_path(quotation) %></td>
         <td><%= link_to "Edit details", edit_quotation_quotation_detail_path(quotation, :quotation_details_id)%></td>
         <td><%= link_to 'Edit quotation', edit_quotation_path(quotation)%></td>

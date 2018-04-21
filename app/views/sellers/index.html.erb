@@ -11,23 +11,19 @@
       <th>Phone</th>
       <th>Email</th>
       <th>link</th>
-      <th>link</th>
-      <th>link</th>
-      <th>Bank details</th>
+      <th>Bank Details</th>
     </tr>
   </thead>
 
   <tbody>
     <% @sellers.each do |seller| %>
       <tr>
-        <td><%= seller.name %></td>
+        <td><%= seller.name%></td>
         <td><%= seller.address %></td>
         <td><%= seller.country %></td>
         <td><%= seller.phone %></td>
         <td><%= seller.email %></td>
         <td><%= link_to 'Show', seller %></td>
-        <td><%= link_to 'Edit', edit_seller_path(seller) %></td>
-        <td><%= link_to 'Destroy', seller, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <td><%= link_to 'Bank Details', seller_account_path(seller)%></td>
       </tr>
     <% end %>
@@ -35,5 +31,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Seller', new_seller_path %>

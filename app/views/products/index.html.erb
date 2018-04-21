@@ -16,16 +16,18 @@
       <th>Placket</th>
       <th>Pocket</th>
       <th>Washing</th>
-      <th>Other details</th>
-      <th colspan="3"></th>
+      <th>Notes</th>
+      <th>Link</th>
+      <th>Link</th>
+      <th>Link</th>
     </tr>
   </thead>
 
   <tbody>
     <% @products.each do |product| %>
       <tr>
-        <td><%= product.category %></td>
-        <td><%= product.photo %></td>
+        <td><%= product.category.name %></td>
+        <td><%= image_tag product.photo.thumb%></td>
         <td><%= product.description %></td>
         <td><%= product.finish %></td>
         <td><%= product.composition %></td>
@@ -34,7 +36,7 @@
         <td><%= product.placket %></td>
         <td><%= product.pocket %></td>
         <td><%= product.washing %></td>
-        <td><%= product.other_details %></td>
+        <td><%= product.note %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

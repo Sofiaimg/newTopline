@@ -2,7 +2,7 @@
 
 <p>
   <strong>Quotation:</strong>
-  <%= @quotation_detail.quotation %>
+  <%= @quotation_detail.quotation.id %>
 </p>
 
 <p>
@@ -27,12 +27,12 @@
 
 <p>
   <strong>Quantity:</strong>
-  <%= @quotation_detail.quantity %>
+  <%= @quotation_detail.quotation %>
 </p>
 
 <p>
   <strong>Size:</strong>
-  <%= @quotation_detail.size %>
+  <%= @quotation_detail.quotation %>
 </p>
 
 <p>
@@ -56,8 +56,8 @@
 </p>
 
 <p>
-  <strong>Otherdetails:</strong>
-  <%= @quotation_detail.otherdetails %>
+  <strong>Otherdetail:</strong>
+  <%= @quotation_detail.otherdetail %>
 </p>
 
 <p>
@@ -70,5 +70,5 @@
   <%= @quotation_detail.status %>
 </p>
 
-<%= link_to 'Edit', edit_quotation_detail_path(@quotation_detail) %> |
-<%= link_to 'Back', quotation_details_path %>
+<%= link_to 'Edit', edit_quotation_quotation_detail_path(@quotation_detail.quotation, @quotation_detail) %> |
+<%= link_to 'Back', quotation_quotation_details_path(@quotation_detail.quotation) %>
