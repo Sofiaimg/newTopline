@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
-User.create!(email: 'sofia@laban.cl', password: 'password', password_confirmation: 'password')if Rails.env.development?
+User.create!(email: 'sofia@laban.cl', password: 'password', password_confirmation: 'password')
 
 Supplier.create!([
   {logo: Faker::Company.logo, name: "Top Line Asias Pacific I&E Chile Agency", alias: 'Top Line', address: Faker::Address.street_address, contact: "Ivan Dśouza", phone: Faker::PhoneNumber.phone_number, email: Faker::Internet.email},
