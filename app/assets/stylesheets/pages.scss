@@ -1,3 +1,30 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ .cardblue{
+   background-color: #00b9f1
+ }
+ .cardyellow{
+   background-color: #ffc952
+ }
+
+ .cardgreen{
+   background-color: #2EC4B6
+ }
+
+ .cardred{
+   background-color: #f15c5c
+ }
+
+
+  .card-body-icon {
+    position: absolute;
+    z-index: 0;
+    top: 5px;
+    right: 5px;
+    font-size: 3rem;
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }

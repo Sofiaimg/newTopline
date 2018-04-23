@@ -1,0 +1,30 @@
+<nav class="navbar fixed-top navbar-expand-sm bg-dark">
+    <li class="navbar-brand">
+        <a class="btn text-light"href="<%= root_path %>#"><h4>StgoOffice</h4></a>
+    </li>
+    <li>
+        <a href="#menu-toggle" class="btn btn-outline-light btn-sm" id="menu-toggle"><i class="fa fa-ellipsis-h"></i></a>
+    </li>
+    <ul class="navbar-nav ml-auto text-white" >
+        <% if user_signed_in?%>
+          <li> <a class="btn text-light" href="#">Banco de Chile</a> </li>
+          <li> <a class="btn text-light" href="#">Motoboy </a> </li>
+          <li> <a class="btn text-light" href="#">TNT</a> </li>
+          <li> <a class="btn text-light" href="#">DHL</a> </li>
+          <li> <a class="btn text-light" href="#">FEDEX</a> </li>
+          <% end%>
+      <li class="nav-item dropdown btn btn-outline-light btn-sm ">
+      <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+        <%= user_signed_in? ? current_user.email : "Log in"%>
+      </a>
+      <div class="dropdown-menu">
+      <%if user_signed_in? %>
+      <a class="dropdown-item" href="<%=destroy_user_session_path%>" data-method="DELETE">Sign out</a>
+      <% else %>
+      <a class="dropdown-item " href="<%=new_user_session_path%>">Sign in</a>
+      <% end %>
+      </div>
+      </div>
+    </li>
+</ul>
+</nav>

@@ -5,6 +5,7 @@ class Quotation < ApplicationRecord
   belongs_to :seller
   belongs_to :client
   belongs_to :payment_term
+  has_many :orders
   has_many :quotation_details
   has_many :products, through: :quotation_details
 

@@ -10,15 +10,27 @@
   </head>
 
   <body>
-
-      <%= render "layouts/navbar" %>
-
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-          <%= yield %>
-      <%= render "layouts/footer" %>
-
-  </body>
+    <%= render "layouts/newnavbar" %>
+        <% if user_signed_in? %>
+        <div id="wrapper" class="toggled" > <!--class="toggled -->
+              <div id="page-content-wrapper" class="card">
+                <%= render "layouts/newsidebar" %>
+                <div class="card-header">
+                  <hr>
+                  <h4 class="font-italic">Top Line Ltda. AG Chile</h4>
+                </div>
+                <% end %>
+                <div class="jumbotron">
+                  <%= yield %>
+                </div>
+                <div class="card-footer text-center">
+                  <div class="text-center">
+                    <%= render "layouts/footer" %>
+                  </div>
+                </div>
+                </div>
+          </div>
+        </div>  </body>
   <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
   </html>

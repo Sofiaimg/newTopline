@@ -1,3 +1,6 @@
 .navbar-collapse li{
   float: left;
 }
+.container{
+  padding-top: 80px
+}

@@ -1,0 +1,95 @@
+<i><% if user_signed_in?%>
+<!-- Sidebar -->
+<div id="sidebar-wrapper" class=" navbar bg-dark">
+    <ul class="sidebar-nav">
+        <div class="card mr-5 bg-dark">
+            <div class="card-body">
+                <img src="https://pbs.twimg.com/media/BvV1Td2CUAA24nX.jpg" class="rounded-circle" style="height:50px">
+            </div>
+            <p class="text-center text-white"><%= current_user.email %></p></i>
+        </div>
+          <div class="accordion">
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Profiles</a>
+              <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <ul class="text-white">
+                    <i><a class="dropdown-item" href="<%=clients_path %>">Clients</a></i>
+                    <i><a class="dropdown-item" href="<%=handlers_path %>">Handlers</a></i>
+                    <i><a class="dropdown-item" href="<%=sellers_path %>">Sellers</a></i>
+                    <i><a class="dropdown-item" href="<%=suppliers_path %>">Suppliers</a></i>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Pre-load attributes</a>
+              <div id="collapseTwo" class="collapse hide" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <ul class="text-white">
+                    <i><a class="dropdown-item" href="<%=sizes_path %>">Sizes</a></i>
+                    <i><a class="dropdown-item" href="<%=colors_path %>"> Colors</a></i>
+                    <i><a class="dropdown-item" href="<%=categories_path %>">Categories</a></i>
+                    <i><a class="dropdown-item" href="<%=ports_path %>">Ports</a></i>
+                    <i><a class="dropdown-item" href="<%=seasons_path %>">Seasons</a></i>
+                    <i><a class="dropdown-item" href="<%=payment_terms_path %>">Payment terms</a></i>
+                    <i><a class="dropdown-item" href="<%=brands_path %>">Brands</a></i>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">Quotations</a>
+              <div id="collapseThree" class="collapse hide" aria-labelledby="headingThree" data-parent="#accordion">
+                  <ul class="text-white">
+                    <i><a class="dropdown-item" href="<%=products_path%>">Product</a></i>
+                    <i><a class="dropdown-item" href="<%=quotations_path%>">Quotation</a></i>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Orders</a>
+              <div id="collapseFour" class="collapse hide" aria-labelledby="headingFour" data-parent="#accordion">
+                  <ul class="text-white">
+                      <i><a class="dropdown-item" href="<%= orders_path %>#">Orders</a></i>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">Deliveries</a>
+              <div id="collapseFive" class="collapse hide" aria-labelledby="headingFive" data-parent="#accordion">
+                  <ul class="text-white">
+                    <i><a class="dropdown-item" href="#">Deliveries</a></i>
+                    <i><a class="dropdown-item" href="#">Documents</a></i>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">Payments</a>
+              <div id="collapseSix" class="collapse hide" aria-labelledby="headingSix" data-parent="#accordion">
+                  <ul class="text-white">
+                    <i><a class="dropdown-item" href="#">payments</a></i>
+                    <i><a class="dropdown-item" href="#">Commissions</a></i>
+                    <i><a class="dropdown-item" href="#">Deductions</a></i>
+                    <i><a class="dropdown-item" href="#">Office expenses</a></i>
+                  </ul>
+              </div>
+          </li>
+          <li>
+              <a class="btn text-light text-left" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true" aria-controls="collapseSeven">Reports</a>
+              <div id="collapseSeven" class="collapse hide" aria-labelledby="headingSeven" data-parent="#accordion">
+                  <ul class="text-white">
+                    <i><a class="dropdown-item" href="#">Commissions</a></i>
+                    <i><a class="dropdown-item" href="#">TT received</a></i>
+                    <i><a class="dropdown-item" href="#">Office expenses</a></i>
+                  </ul>
+              </div>
+          </li>
+    </ul>
+</div>
+
+  <% end%>
+        <!-- /#sidebar-wrapper -->
+    <!-- Menu Toggle Script -->
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>

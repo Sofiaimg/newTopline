@@ -11,25 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :quotation_detail_id %>
-    <%= form.text_field :quotation_detail_id, id: :variant_quotation_detail_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :variant_quantity %>
-  </div>
-
-  <div class="field">
-    <%= form.label :size_id %>
-    <%= form.text_field :size_id, id: :variant_size_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :ratio %>
-    <%= form.number_field :ratio, id: :variant_ratio %>
-  </div>
+  <table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+  <thead>
+    <tr>
+      <th><%= form.label :quotation_detail_totaldetail_id %> </th>
+      <th><%= form.label :quantity %></th>
+      <th><%= form.label :size_id %></th>
+      <th><%= form.label :ratio %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= form.text_field :quotation_detail_id, id: :variant_quotation_detail_id %></th>
+      <td><%= form.number_field :quantity, id: :variant_quantity %></th>
+      <td><%= form.text_field :size_id, id: :variant_size_id %></th>
+      <td><%= form.number_field :ratio, id: :variant_ratio %></th>
+    </tr>
+  </tbody>
+</table>
 
   <div class="actions">
     <%= form.submit %>
