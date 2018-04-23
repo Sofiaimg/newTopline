@@ -9,7 +9,7 @@
       <div class="card-body">
         <h5 class="card-title"><%=@supplier_account.supplier.name%> Bank Details</h5>
         <hr>
-        <img class="card-img-top img-fluid" src="https://orig00.deviantart.net/f634/f/2011/050/e/1/default_sailor_moon_2_by_hato_photo-d39x0um.png" alt="Card image cap">
+        <img class="card-img-top img-fluid" src="<%= @supplier_account.supplier.logo %>" alt="Card image cap">
         <p class="card-text">
           <p> <strong>Supplier:</strong> <%= @supplier_account.supplier.name %> </p>
           <p> <strong>Bank:</strong> <%= @supplier_account.bank %>  </p>
@@ -17,7 +17,7 @@
           <p> <strong>Account:</strong> <%= @supplier_account.account %> </p>
           <p> <strong>Swift:</strong> <%= @supplier_account.swift %> </p>
         </p>
-        <a href="<%= suppliers_path %>" class="btn btn-outline-secondary btn-sm">Go back to All Suppliers</a>
+        <a href="<%= suppliers_path %>" class="btn btn-outline-secondary btn-sm">Back to All Suppliers</a>
       </div>
     </div>
   </div>

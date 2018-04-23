@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 <hr>
-<p>Remember to add products first before adding new Quotation details</p>
-<%= link_to "Add product",  products_path %>
+<h4>Remember to add products first before creating new Quotation details</h4>
+<%= link_to "Add product",  products_path, class: "btn btn-outline-secondary btn-sm" %>
 <hr>
 
 <h1>Quotations</h1>
 
-<table class="table table-striped table-bordered table-hover table-sm " id="myTable">
+<table class="table table-responsive table-striped table-bordered table-hover table-sm " id="myTable">
   <thead>
     <tr>
       <th>Quotation n°</th>
@@ -40,11 +40,11 @@
         <td><%= quotation.client.name %></td>
         <td><%= quotation.payment_term.clause %></td>
         <td><%= quotation.payment_term.conditions %></td>
-        <td><%= link_to 'See quotation details', quotation_quotation_details_path(quotation) %></td>
-        <td><%= link_to "add new details", new_quotation_quotation_detail_path(quotation) %></td>
-        <td><%= link_to "Edit details", edit_quotation_quotation_detail_path(quotation, :quotation_details_id)%></td>
-        <td><%= link_to 'Edit quotation', edit_quotation_path(quotation)%></td>
-        <td><%= link_to 'Delete Quotation', quotation, method: :delete, data: { confirm: 'Are you sure?' }%></td>
+        <td><%= link_to 'See quotation details', quotation_quotation_details_path(quotation), class: "btn btn-outline-secondary btn-sm" %></td>
+        <td><%= link_to "add new details", new_quotation_quotation_detail_path(quotation), class: "btn btn-outline-secondary btn-sm" %></td>
+        <td><%= link_to "Edit details", edit_quotation_quotation_detail_path(quotation, :quotation_details_id), class: "btn btn-outline-secondary btn-sm"%></td>
+        <td><%= link_to 'Edit quotation', edit_quotation_path(quotation), class: "btn btn-outline-secondary btn-sm"%></td>
+        <td><%= link_to 'Delete Quotation', quotation, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm"%></td>
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +52,4 @@
 
 <br>
 
-<%= link_to 'New Quotation', new_quotation_path %>
+<%= link_to 'New Quotation', new_quotation_path, class: "btn btn-outline-secondary" %>

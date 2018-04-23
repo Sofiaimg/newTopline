@@ -7,12 +7,12 @@
 
 <p>
   <strong>Brand:</strong>
-  <%= @quotation_detail.brand %>
+  <%= @quotation_detail.brand.name %>
 </p>
 
 <p>
   <strong>Product:</strong>
-  <%= @quotation_detail.product %>
+  <%= @quotation_detail.product.description %>
 </p>
 
 <p>
@@ -22,17 +22,17 @@
 
 <p>
   <strong>Color:</strong>
-  <%= @quotation_detail.color %>
+  <%= @quotation_detail.color.name %>
 </p>
 
 <p>
   <strong>Quantity:</strong>
-  <%= @quotation_detail.quotation %>
+  <%= @quotation_detail.quantity %>
 </p>
 
 <p>
   <strong>Size:</strong>
-  <%= @quotation_detail.quotation %>
+  <%= @quotation_detail.size.name %>
 </p>
 
 <p>
@@ -70,5 +70,5 @@
   <%= @quotation_detail.status %>
 </p>
 
-<%= link_to 'Edit', edit_quotation_quotation_detail_path(@quotation_detail.quotation, @quotation_detail) %> |
-<%= link_to 'Back', quotation_quotation_details_path(@quotation_detail.quotation) %>
+<%= link_to 'Edit', edit_quotation_quotation_detail_path(@quotation_detail.quotation, @quotation_detail), class: "btn btn-outline-secondary" %> |
+<%= link_to 'Back', quotation_quotation_details_path(@quotation_detail.quotation), class: "btn btn-outline-secondary" %>
