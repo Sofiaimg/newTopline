@@ -1,5 +1,5 @@
 #loginbackground{
-  background-image: url("app/assets/images/stgo.jpg");
+  background-image: url("../stgo.jpg");
   background-repeat: no-repeat;
   background-size:cover
 }
