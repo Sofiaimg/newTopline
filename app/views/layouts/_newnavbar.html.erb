@@ -6,14 +6,8 @@
         <a href="#menu-toggle" class="btn btn-outline-light btn-sm" id="menu-toggle"><i class="fa fa-ellipsis-h"></i></a>
     </li>
     <ul class="navbar-nav ml-auto text-white" >
-        <% if user_signed_in?%>
-          <li> <a class="btn text-light" href="#">Banco de Chile</a> </li>
-          <li> <a class="btn text-light" href="#">Motoboy </a> </li>
-          <li> <a class="btn text-light" href="#">TNT</a> </li>
-          <li> <a class="btn text-light" href="#">DHL</a> </li>
-          <li> <a class="btn text-light" href="#">FEDEX</a> </li>
-          <% end%>
-      <li class="nav-item dropdown btn btn-outline-light btn-sm ">
+
+      <li class="nav-item dropdown btn btn-outline-light btn-lg ">
       <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
         <%= user_signed_in? ? current_user.email : "Log in"%>
       </a>
